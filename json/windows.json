@@ -42,5 +42,82 @@
         "url": "https://drive.google.com/file/d/165BrmMtg5JXjTKPIU-qjPaEOK7dRUvH1/view?usp=drivesdk"
       }
     ]
+  },
+  {
+    "name": "Windows 10 Enterprise LTSC LiteOS",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231108-193153_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Pixeldrain)",
+        "url": "https://pixeldrain.com/u/x36YBb4W"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Enterprise LTSC LiteOS",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231108-193153_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Pixeldrain)",
+        "url": "https://pixeldrain.com/u/x36YBb4W"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 S",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231016-154140_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Pixeldrain)",
+        "url": "https://pixeldrain.com/u/Szm2YfcS"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Pro Metroless",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231016-154020_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Google Drive)",
+        "url": "https://drive.google.com/file/d/1VAKPHZVKMN8hlNbjwe2jcNKRH4T_wsRl/view?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "name": "Windows 8 Pro LiteOS",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231016-153949_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/134ppjvff6z5q58/Windows_8.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Mobile",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231013-184352_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Archive)",
+        "url": "https://archive.org/details/Windows10MobileBuild14393"
+      }
+    ]
+  },
+  {
+    "name": "Windows 11 Enterprise 21H2 (Tiny 11)",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230908-191531_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/yyl4hzase992b1q/Tiny_11.rar/file"
+      }
+    ]
   }
 ]

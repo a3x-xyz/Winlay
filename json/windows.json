@@ -352,13 +352,46 @@
     ]
   },
   {
-    "name": "Windows Server 2022 Datacenter  ",
+    "name": "Windows Server 2022 Datacenter",
     "description": "No description",
     "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/img.icons8.png",
     "downloads": [
       {
         "label": "Download (Mediafire)",
         "url": "https://www.mediafire.com/file/l2ckgs12uge012c/Windows_Server_2025.rar/file?dkey=e7rmnpj7cgr&r=344"
+      }
+    ]
+  },
+  {
+    "name": "Windows XP SP3",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230525-153607_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Google Drive)",
+        "url": "https://drive.google.com/file/d/157TL4N20irPwihDYzKmm_D_Jtt3Vfv4j/view?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "name": "Windows Vista Ultimate",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230525-153752_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Google Drive)",
+        "url": "https://drive.google.com/file/d/14yRWNdDd-v6JSFGK5jbT0GJiJtanRp8t/view?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "name": "Windows Longhorn 5048",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231026-083704_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Pixeldrain)",
+        "url": "https://pixeldrain.com/u/hbN5DwPw"
       }
     ]
   }

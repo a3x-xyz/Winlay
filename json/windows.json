@@ -119,5 +119,137 @@
         "url": "https://www.mediafire.com/file/yyl4hzase992b1q/Tiny_11.rar/file"
       }
     ]
+  },
+  {
+    "name": "Windows 10 Pro (Nexus LiteOS 1709)",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230908-190428_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Pixeldrain)",
+        "url": "https://pixeldrain.com/u/f5Sbxg4F"
+      }
+    ]
+  },
+  {
+    "name": "Windows XP 2021 Edition",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230830-095036_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Google Drive)",
+        "url": "https://drive.google.com/file/d/1qvUsDPYKIab22ko265Hkb8F3sWdaIBui/view?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Pro 1909 Dark Edition",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230830-094921_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mega)",
+        "url": "https://mega.nz/file/JwpGQTqT#txRYCjVjwyzfO0Knrh21idCKauvjOWclUdldXnnkrQM"
+      }
+    ]
+  },
+  {
+    "name": "Windows 7 Starter",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/windows-7-starter-sp1_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mega)",
+        "url": "https://mega.nz/file/U84HCKSD#1MoPFGK96VAtJhxM-8IRSMEL60HyC_rmBamWRj-sCAY"
+      }
+    ]
+  },
+  {
+    "name": "Windows 8.1 Pro Superlite",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230830-094246_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/ve0ijqe44t6tn7s/Windows+8.1+Pro+Superlite+by+@Rimvydop.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 7 Superlite",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230830-093940_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/pp41u2cjlivuone/Windows_7_Superlite_by_%2540Rimvydop.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Pro Superlite v6",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230829-193618_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/zklq6nftuchlidq/Windows_10_Pro_Superlite_V6_by_%2540TheRimvydop.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 7 Enterprise",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112700_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/50flher943s4qfy/Windows_7_Enterprise.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 11 Pro (Nexus Tiny 11)",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-125023_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/fsx49883t5ukxpt/Nexus_Tiny_Lite_OS_11_by_%2540TheRimvydop.rar/file?dkey=52y5fivnrju&r=332"
+      }
+    ]
+  },
+  {
+    "name": "Windows 11 Pro 22H2 LiteOS",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-125414_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/422v5n8hlb8omnx/Windows_11_Pro_Lite_OS_22h2_by_%2540TheRimvydop.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Pro 21H1 LiteOS",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-125152_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/lk8cpdl0tdj4spf/Windows_10_Pro_32bit_21H1_APRIL_2021_-_LiteOS_by_%2540TheRimvydop.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 10 Enterprise LTSC Original",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230515-083924_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/zt5n91oo7ql7373/Windows_10_Enterprise_LTSC_Original_by_%2540TheRimvydop.rar/file"
+      }
+    ]
   }
 ]

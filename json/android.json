@@ -9,5 +9,82 @@
         "url": "https://www.mediafire.com/file/cq4dwdvs9zen03z/Android+3.2.rar/file"
       }
     ]
+  },
+  {
+    "name": "Android TV x86",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20231026-083841_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/9q65bf5r22p7rep/Android_TV_x86.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Android 9.0",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230908-190913_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Pixeldrain)",
+        "url": "https://pixeldrain.com/u/uuMhJGzg"
+      }
+    ]
+  },
+  {
+    "name": "Android 6.0",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230617-112223_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/hj2z1qb1g6wbgsz/android-x86-6.0-r1.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Android 5.1",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230617-112157_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/beo46gnzv72ykcd/Android_5.1-rc1.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Android 4.4",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230604-184054_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/g5jhq1cmjoj2iqc/Android_4.4_RC1.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Android 2.2",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230604-184026_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/a0m5dgzs1ywxpcs/Android_2.2.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Android 1.6",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230601-094904_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/4ar5yshyx7b9788/Android_1.6.rar/file"
+      }
+    ]
   }
 ]

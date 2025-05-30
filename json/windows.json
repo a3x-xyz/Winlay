@@ -20,5 +20,27 @@
         "url": "https://www.dropbox.com/s/hlu6gjvnjop0nrv/Windows%208.1%20Pro.rar?dl=0"
       }
     ]
+  },
+  {
+    "name": "Windows 10 Enterprise",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230524-132532-orig_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/h64eudj749tl3md/Windows_10_Enterprise.rar/file"
+      }
+    ]
+  },
+  {
+    "name": "Windows 11 LTSC",
+    "description": "No description",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230521-130153_orig.jpg",
+    "downloads": [
+      {
+        "label": "Download (Google Drive)",
+        "url": "https://drive.google.com/file/d/165BrmMtg5JXjTKPIU-qjPaEOK7dRUvH1/view?usp=drivesdk"
+      }
+    ]
   }
 ]

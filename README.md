@@ -2,6 +2,9 @@
 
 **Winlay** is a free application developed by **A3X**. It allows users to download operating systems such as **Windows**, **Android**, and **Linux**.
 
+### Screenshow
+![screenshot](https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/screenshow.png)
+
 ### Download
 
 Get the latest release [here](https://github.com/a3x-xyz/Winlay/releases/tag/1.1).

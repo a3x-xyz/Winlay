@@ -2,7 +2,7 @@
   {
     "name": "Windows 7 Pro LiteOS",
     "description": "Architecture: x64\nMachine Type: pc\nCPU Model: Qemu64\nCPU Core: 8\nRAM Memory: 3080\nEnable MTTCG\n\nVideo display: std\nAudio card: All\nNetwork: User\nNetwork Card: rtl8139\nRequirements: High Priority",
-    "iconUrl": "https://example.com/icons/supertool.png",
+    "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112814_orig.jpg",
     "downloads": [
       {
         "label": "Download (Mediafire)",

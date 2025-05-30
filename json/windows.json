@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Windows 7 Pro LiteOS",
+    "description": "Architecture: x64\nMachine Type: pc\nCPU Model: Qemu64\nCPU Core: 8\nRAM Memory: 3080\nEnable MTTCG\n\nVideo display: std\nAudio card: All\nNetwork: User\nNetwork Card: rtl8139\nRequirements: High Priority",
+    "iconUrl": "https://example.com/icons/supertool.png",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/rxo6pv9oswgsdr4/Windows_7_Lite_OS_by_%2540TheRimvydop.rar/file"
+      }
+    ]
+  }
+]

@@ -4,7 +4,7 @@
 
 ### Screenshot
 
-![screenshot](https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/screenshow.png)
+![screenshot](https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/screenshot.png)
 
 ### Download
 

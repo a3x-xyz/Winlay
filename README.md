@@ -1,6 +1,8 @@
 # Winlay
 
-**Winlay** is a free application developed by **A3X** and created by **Rimvydop**. It allows users to download operating systems such as **Windows**, **Android**, and **Linux**.
+You can download Windows, Android and Linux files to use QEMU or VM.
+
+**Winlay** is that you can download anything you want on Windows, Android or Linux.
 
 ### Screenshot
 

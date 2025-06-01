@@ -1,8 +1,5 @@
 # Winlay
-
-You can download Windows, Android and Linux files to use QEMU or VM.
-
-**Winlay** is that you can download anything you want on Windows, Android or Linux.
+**Winlay** App is developed by **A3X**, you can download Windows, Android and Linux files that can be used to test Emulators like (Limbo PC Emulator x86, VirtualBox and more)
 
 ### Screenshot
 

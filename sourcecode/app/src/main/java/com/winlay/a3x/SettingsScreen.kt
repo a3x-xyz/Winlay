@@ -195,6 +195,7 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
                     Text("• Added full app list in the App Store", style = MaterialTheme.typography.bodyMedium)
                     Text("• Added Event button to the Home screen", style = MaterialTheme.typography.bodyMedium)
                     Text("• Introduced Events feature", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Changed icon in Welcome screen (only works on Android 11 or older)", style = MaterialTheme.typography.bodyMedium)
                     Text("• Many new features and improvements", style = MaterialTheme.typography.bodyMedium)
                 }
             },

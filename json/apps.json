@@ -16,8 +16,10 @@
    "description": "Termux combines powerful terminal emulation with an extensive Linux package collection.\n\n* Enjoy the bash and zsh shells.\n* Edit files with nano and vim.\n* Access servers over ssh.\n* Compile code with gcc and clang.\n* Use the python console as a pocket calculator.\n* Check out projects with git and subversion.\n* Run text-based games with frotz.\n\nAt first start a small base system is downloaded - desired packages can then be installed using the apt package manager known from the Debian and Ubuntu Linux distributions. Access the built-in help by long-pressing anywhere on the terminal and selecting the Help menu option to learn more.\n\nRead help online: https://wiki.termux.com/\n\nReddit Community: https://termux.com/community",
    "logoUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/termux.png",
    "screenshots": [
-     "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112700_orig.jpg",
-     "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112700_orig.jpg"
+     "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/1.jpg",
+     "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/2.jpg",
+     "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/3.jpg",
+     "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/4.jpg"
    ],
    "downloadUrl": "https://f-droid.org/repo/com.termux_1022.apk"
  }

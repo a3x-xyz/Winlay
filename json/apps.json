@@ -1,13 +1,13 @@
 [
   {
-    "id": "test",
-    "name": "test",
-    "description": "test.",
-    "logoUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112700_orig.jpg",
+    "id": "Limbo PC Emulator x86",
+    "name": "Limbo PC Emulator x86",
+    "description": "Limbo is a QEMU-based emulator for Android supports emulation for these architectures: x86/x86_64 ARM/ARM64 PowerPC/PowerPC64 Sparc.",
+    "logoUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/limbo-pc-emulator.png",
     "screenshots": [
       "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112700_orig.jpg",
       "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20230505-112700_orig.jpg"
     ],
-    "downloadUrl": "https://a3x.xyz/download/winlay"
+    "downloadUrl": "https://github.com/limboemu/limbo/releases/download/v6.0.1-LimboEmulator/limbo-android-x86-6.0.1-qemu-5.1.0.apk"
   }
 ]

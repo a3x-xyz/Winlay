@@ -22,5 +22,15 @@
      "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/4.jpg"
    ],
    "downloadUrl": "https://f-droid.org/repo/com.termux_1022.apk"
+ },
+ {
+   "id": "vectras",
+   "name": "Vectras",
+   "description": "",
+   "logoUrl": "https://raw.githubusercontent.com/xoureldeen/Vectras-VM-Android/refs/heads/master/resources/vectrasvm.png",
+   "screenshots": [
+     "https://www.openapk.net/images/screenshots/vectras-vm-apk.jpeg"
+   ],
+   "downloadUrl": "https://github.com/xoureldeen/Vectras-VM-Android/releases/download/v2.9.5/app-release-universal.apk"
  }
 ]

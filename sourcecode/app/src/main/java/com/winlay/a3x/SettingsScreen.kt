@@ -188,9 +188,14 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
             title = { Text("What's new in 1.5") },
             text = {
                 Column {
-                    Text("• Added app store.", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Added \"Search\" in Windows, Linux and Android.", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Changed the icon.", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Bug fixes", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Project is now open source under the GPLv3 license", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Dropped support for Android 7.0 and 7.1", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Removed \"Coming soon\" in App Store", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Added full app list in the App Store", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Added Event button to the Home screen", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Introduced Events feature", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Many new features and improvements", style = MaterialTheme.typography.bodyMedium)
                 }
             },
             confirmButton = {

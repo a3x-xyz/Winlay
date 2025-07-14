@@ -14,7 +14,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = 1
-        versionName = "1.5"
+        versionName = "1.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,6 +41,11 @@ android {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.4")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.4")
+    implementation("io.ktor:ktor-client-json:2.3.4")
+    implementation("io.ktor:ktor-client-okhttp:2.3.4")
+    implementation("io.ktor:ktor-client-core:2.3.4")
     implementation("com.kizitonwose.calendar:compose:2.3.0")
     implementation("androidx.compose.foundation:foundation:1.6.0")
     implementation("com.google.accompanist:accompanist-swiperefresh:0.33.2-alpha")

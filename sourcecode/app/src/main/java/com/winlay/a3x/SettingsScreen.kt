@@ -50,6 +50,16 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
                 .fillMaxWidth()
                 .clickable { showAboutDialog = true }
         )
+
+        ListItem(
+            headlineContent = { Text("Donate") },
+            supportingContent = { Text("Support Winlay development") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    uriHandler.openUri("https://a3x.xyz/donate")
+                }
+        )
     }
 
     if (showThemeDialog) {
@@ -169,6 +179,17 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
                             uriHandler.openUri("https://www.gnu.org/licenses/gpl-3.0.html")
                         }
                     )
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text("License:", style = MaterialTheme.typography.labelMedium)
+                    Text(
+                        text = "GNU General Public License v3.0",
+                        color = MaterialTheme.colorScheme.primary,
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.clickable {
+                            uriHandler.openUri("https://www.gnu.org/licenses/gpl-3.0.html")
+                        }
+                    )
                 }
             },
             confirmButton = {
@@ -185,18 +206,11 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
     if (showWhatsNewDialog) {
         AlertDialog(
             onDismissRequest = { showWhatsNewDialog = false },
-            title = { Text("What's new in 1.5") },
+            title = { Text("What's new in 1.6") },
             text = {
                 Column {
-                    Text("• Bug fixes", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Project is now open source under the GPLv3 license", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Dropped support for Android 7.0 and 7.1", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Removed \"Coming soon\" in App Store", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Added full app list in the App Store", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Added Event button to the Home screen", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Introduced Events feature", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Changed icon in Welcome screen (only works on Android 11 or older)", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Many new features and improvements", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Added Thunder OS option to the Home screen", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Added Donate button to the Settings screen", style = MaterialTheme.typography.bodyMedium)
                 }
             },
             confirmButton = {

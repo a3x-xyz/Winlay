@@ -49,6 +49,7 @@ fun MainScreen() {
                 DetailScreen(name, navController)
             }
             composable("event") { EventScreen(navController) }
+            composable("thunderos") { ThunderOSScreen(navController) }
         }
     }
 }

@@ -95,6 +95,10 @@ fun HomeScreen(navController: NavController) {
         OtherItem(icon = Icons.Filled.Event, label = "Event") {
             navController.navigate("event")
         }
+
+        OtherItem(icon = Icons.Filled.Computer, label = "Thunder OS") {
+            navController.navigate("thunderos")
+        }
     }
 }
 

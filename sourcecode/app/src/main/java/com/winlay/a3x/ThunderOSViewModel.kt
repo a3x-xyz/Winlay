@@ -1,42 +1,40 @@
-package com.winlay.a3x
+package com.winlay.a3x.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.ktor.client.*
-import io.ktor.client.engine.okhttp.*
-import io.ktor.client.request.*
-import io.ktor.client.call.*
-import io.ktor.client.plugins.contentnegotiation.*
-import io.ktor.serialization.kotlinx.json.*
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import java.net.URL
 
+@Serializable
+data class ThunderOS(
+    val name: String,
+    val downloadUrl: String
+)
 
 class ThunderOSViewModel : ViewModel() {
-    private val client = HttpClient(OkHttp) {
-        install(ContentNegotiation) {
-            json(Json { ignoreUnknownKeys = true })
-        }
-    }
 
-    private val _data = MutableStateFlow<ThunderOSData?>(null)
-    val data: StateFlow<ThunderOSData?> = _data
+    private val _thunderOSList = MutableStateFlow<List<ThunderOS>>(emptyList())
+    val thunderOSList: StateFlow<List<ThunderOS>> = _thunderOSList
 
     init {
-        fetchData()
+        fetchThunderOS()
     }
 
-    private fun fetchData() {
+    private fun fetchThunderOS() {
         viewModelScope.launch {
             try {
-                val response: String = client.get("https://raw.githubusercontent.com/a3x-xyz/Winlay/main/json/thunderos.json").body()
+                val jsonUrl = "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/json/thunderos.json"
+                val jsonString = URL(jsonUrl).readText()
 
-                val parsed = Json.decodeFromString<ThunderOSData>(response)
-                _data.value = parsed
+                val parsedList = Json.decodeFromString<List<ThunderOS>>(jsonString)
+
+                _thunderOSList.value = parsedList
             } catch (e: Exception) {
                 e.printStackTrace()
-                println("Failed to fetch ThunderOS data: ${e.message}")
             }
         }
     }

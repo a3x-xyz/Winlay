@@ -206,11 +206,11 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
     if (showWhatsNewDialog) {
         AlertDialog(
             onDismissRequest = { showWhatsNewDialog = false },
-            title = { Text("What's new in 1.6") },
+            title = { Text("What's new in 1.7") },
             text = {
                 Column {
-                    Text("• Added Thunder OS option to the Home screen", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Added Donate button to the Settings screen", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Changed icon", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Fixed bugs", style = MaterialTheme.typography.bodyMedium)
                 }
             },
             confirmButton = {

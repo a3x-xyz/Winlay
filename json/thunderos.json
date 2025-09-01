@@ -1,5 +1,22 @@
-{
-  "name": "Thunder OS Pro",
-  "image": "https://thunderos.weebly.com/uploads/1/5/1/6/151648737/screenshot-2025-07-02-105153_orig.png",
-  "download": "https://drive.google.com/file/d/1oxAXfMux7Mh0Yf382gLvbtomeDng8FB5/view?usp=drive_link"
-}
+[
+  {
+    "name": "Thunder OS 11 Pro - Latest",
+    "image": "https://thunderos.weebly.com/uploads/1/5/1/6/151648737/screenshot-2025-07-02-105153_orig.png",
+    "download": "https://drive.google.com/file/d/1oxAXfMux7Mh0Yf382gLvbtomeDng8FB5/view?usp=drive_link"
+  },
+  {
+    "name": "Thunder OS 11 Core - Latest",
+    "image": "https://thunderos.weebly.com/uploads/1/5/1/6/151648737/screenshot-2025-07-02-105153_orig.png",
+    "download": "https://drive.google.com/file/d/1v-A9y2IeeO_n_urMN-2rBlijHpQOGZqa/view?usp=drive_link"
+  },
+  {
+    "name": "Thunder OS 11 Pro - Dev Insider Preview (Build 27881)",
+    "image": "https://thunderos.weebly.com/uploads/1/5/1/6/151648737/screenshot-2025-07-02-105153_orig.png",
+    "download": "https://pixeldrain.com/u/Foc5okYw"
+  },
+  {
+    "name": "Thunder OS 10 Pro - Dev Insider Preview (Build 19045)",
+    "image": "https://media.discordapp.net/attachments/1277867802836865057/1392872752645410917/SPOILER_Screenshot_2025-07-10_171651.png?ex=6875ba96&is=68746916&hm=d8191adc31640f65cf7adef6090a571b5464020c0adcab28e63e174c0d2955a2&=&format=webp&quality=lossless&width=1550&height=872",
+    "download": "https://drive.google.com/file/d/1Eala6R7XijxmxR3u7TQ5RIKVeIrD1byV/view?usp=drive_link"
+  }
+]

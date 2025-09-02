@@ -115,7 +115,7 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
 
                     Text("Version:", style = MaterialTheme.typography.labelMedium)
                     Text(
-                        "1.5",
+                        "1.7",
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.clickable {
                             versionTapCount++

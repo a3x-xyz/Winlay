@@ -1,10 +1,10 @@
 name: Generated APK AAB (Upload - Create Artifact To Github Action)
 
 env:
-  # The name of the main module repository (Gradle module, not app name!)
+  # Gradle module name
   main_project_module: app
 
-  # The app’s Play Store / display name
+  # Your app name
   playstore_name: Winlay
 
 on:
@@ -35,28 +35,29 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Change wrapper permissions
-        run: chmod +x sourcecode/gradlew
+      # Install Gradle in CI
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v3
 
       # Run Tests Build
       - name: Run gradle tests
-        run: sourcecode/gradlew test
+        run: gradle -p sourcecode test
 
       # Run Build Project
       - name: Build gradle project
-        run: sourcecode/gradlew build
+        run: gradle -p sourcecode build
 
       # Create APK Debug
       - name: Build apk debug project (APK) - ${{ env.main_project_module }} module
-        run: sourcecode/gradlew assembleDebug
+        run: gradle -p sourcecode assembleDebug
 
       # Create APK Release
       - name: Build apk release project (APK) - ${{ env.main_project_module }} module
-        run: sourcecode/gradlew assemble
+        run: gradle -p sourcecode assemble
 
       # Create Bundle AAB Release
       - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
-        run: sourcecode/gradlew ${{ env.main_project_module }}:bundleRelease
+        run: gradle -p sourcecode ${{ env.main_project_module }}:bundleRelease
 
       # Upload APK Debug
       - name: Upload APK Debug - ${{ env.repository_name }}

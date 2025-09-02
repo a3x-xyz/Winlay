@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -34,10 +33,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Move into the sourcecode folder
-      - name: Change directory
+      # Generate Gradle wrapper (since it's missing in repo)
+      - name: Generate Gradle Wrapper
         working-directory: sourcecode
-        run: echo "Now inside sourcecode"
+        run: gradle wrapper
 
       # Make gradlew executable
       - name: Grant execute permission for gradlew

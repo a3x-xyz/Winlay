@@ -1,11 +1,11 @@
 name: Generated APK AAB (Upload - Create Artifact To Github Action)
 
 env:
-  # The name of the main module repository
+  # The name of the main module repository (Gradle module, not app name!)
   main_project_module: app
 
-  # The name of the Play Store
-  playstore_name: Frogobox ID
+  # The app’s Play Store / display name
+  playstore_name: Winlay
 
 on:
   push:
@@ -16,10 +16,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: sourcecode   # 👈 All commands run inside sourcecode/
 
     steps:
       - uses: actions/checkout@v4
@@ -40,45 +36,45 @@ jobs:
           cache: 'gradle'
 
       - name: Change wrapper permissions
-        run: chmod +x ./gradlew
+        run: chmod +x sourcecode/gradlew
 
       # Run Tests Build
       - name: Run gradle tests
-        run: ./gradlew test
+        run: sourcecode/gradlew test
 
       # Run Build Project
       - name: Build gradle project
-        run: ./gradlew build
+        run: sourcecode/gradlew build
 
       # Create APK Debug
       - name: Build apk debug project (APK) - ${{ env.main_project_module }} module
-        run: ./gradlew assembleDebug
+        run: sourcecode/gradlew assembleDebug
 
       # Create APK Release
       - name: Build apk release project (APK) - ${{ env.main_project_module }} module
-        run: ./gradlew assemble
+        run: sourcecode/gradlew assemble
 
       # Create Bundle AAB Release
       - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
-        run: ./gradlew ${{ env.main_project_module }}:bundleRelease
+        run: sourcecode/gradlew ${{ env.main_project_module }}:bundleRelease
 
       # Upload APK Debug
       - name: Upload APK Debug - ${{ env.repository_name }}
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) debug generated
+          name: ${{ env.date_today }} - Winlay - ${{ env.repository_name }} - APK(s) debug generated
           path: sourcecode/${{ env.main_project_module }}/build/outputs/apk/debug/
 
       # Upload APK Release
       - name: Upload APK Release - ${{ env.repository_name }}
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
+          name: ${{ env.date_today }} - Winlay - ${{ env.repository_name }} - APK(s) release generated
           path: sourcecode/${{ env.main_project_module }}/build/outputs/apk/release/
 
       # Upload AAB Release
       - name: Upload AAB (App Bundle) Release - ${{ env.repository_name }}
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - App bundle(s) AAB release generated
+          name: ${{ env.date_today }} - Winlay - ${{ env.repository_name }} - App bundle(s) AAB release generated
           path: sourcecode/${{ env.main_project_module }}/build/outputs/bundle/release/

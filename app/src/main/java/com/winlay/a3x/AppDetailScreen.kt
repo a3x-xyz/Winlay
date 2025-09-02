@@ -34,7 +34,7 @@ fun AppDetailScreen(appId: String, navController: NavController) {
     var app by remember { mutableStateOf<App?>(null) }
     var isLoading by remember { mutableStateOf(true) }
     var selectedImage by remember { mutableStateOf<String?>(null) }
-    
+
     LaunchedEffect(appId) {
         val apps = AppRepository.getApps()
         app = apps.find { it.id == appId }

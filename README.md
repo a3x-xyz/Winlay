@@ -24,6 +24,9 @@
     <img src="https://img.shields.io/badge/Discord-Join%20Chat-5865F2?logo=discord&logoColor=white" alt="Discord">
   </a>
 </p>
+<p align="center">
+  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/mardous/BoomingMusic/"><img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png" height="60"></a>
+</p>
 
 **Winlay** is a free and open-source app developed by **A3X**.  
 It allows you to download Windows, Android, and Linux files that can be used to test emulators such as **Limbo PC Emulator x86**, **VirtualBox**, **QEMU** and more.

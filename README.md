@@ -25,6 +25,7 @@
   </a>
 </p>
 <p align="center">
+  <a href="https://github.com/a3x-xyz/Winlay/releases"><img src="https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/getitongithub.png" height="60"></a>
   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/a3x-xyz/Winlay"><img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png" height="60"></a>
 </p>
 

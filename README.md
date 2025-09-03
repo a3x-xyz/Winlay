@@ -43,10 +43,6 @@ The source code is available in the [`/sourcecode`](https://github.com/a3x-xyz/W
   <img src="https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/screenshot.png" alt="screenshot">
 </p>
 
-### Download
-
-Download the latest release [here](https://github.com/a3x-xyz/Winlay/releases/latest)
-
 ### Donate
 If you'd like to support the project, please visit:  
 https://a3x.xyz/donate

@@ -26,7 +26,7 @@
 </p>
 
 **Winlay** is a free and open-source app developed by **A3X**.  
-It allows you to download Windows, Android, and Linux files that can be used to test emulators such as **Limbo PC Emulator x86**, **VirtualBox**, and more.
+It allows you to download Windows, Android, and Linux files that can be used to test emulators such as **Limbo PC Emulator x86**, **VirtualBox**, **QEMU** and more.
 
 ### Open Source
 

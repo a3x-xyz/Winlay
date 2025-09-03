@@ -46,7 +46,3 @@ The source code is available in the [`/sourcecode`](https://github.com/a3x-xyz/W
 ### Donate
 If you'd like to support the project, please visit:  
 https://a3x.xyz/donate
-
-### Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=a3x-xyz/Winlay&type=Date)](https://star-history.com/#a3x-xyz/Winlay&Date)

@@ -15,6 +15,10 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import com.winlay.a3x.ui.screens.ThunderOSScreen
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
+import com.winlay.a3x.components.PremiumNavigationBar
 
 @Composable
 fun MainScreen() {
@@ -62,15 +66,12 @@ fun BottomNavigationBar(navController: NavHostController) {
         BottomNavItem("App Store", "appstore", Icons.Default.Store),
         BottomNavItem("Settings", "settings", Icons.Default.Settings)
     )
-
     NavigationBar {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
 
         items.forEach { item ->
             NavigationBarItem(
-                icon = { Icon(item.icon, contentDescription = item.label) },
-                label = { Text(item.label) },
                 selected = currentDestination?.route == item.route,
                 onClick = {
                     navController.navigate(item.route) {
@@ -80,7 +81,9 @@ fun BottomNavigationBar(navController: NavHostController) {
                         launchSingleTop = true
                         restoreState = true
                     }
-                }
+                },
+                icon = { Icon(item.icon, contentDescription = item.label) },
+                label = { Text(item.label) }
             )
         }
     }

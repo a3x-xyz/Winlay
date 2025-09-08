@@ -31,15 +31,14 @@ import java.net.URL
 import java.time.*
 import java.time.format.TextStyle
 import java.util.*
+import com.winlay.a3x.components.PremiumCard
+import com.winlay.a3x.ui.theme.LocalSpacing
+import androidx.compose.foundation.background
+import androidx.compose.material.icons.filled.Event
+import androidx.compose.ui.draw.clip
+import androidx.compose.material3.ExperimentalMaterial3Api
 
-@Serializable
-data class Event(
-    val title: String,
-    val description: String,
-    val date: String,
-    val image: String
-)
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EventScreen(navController: NavController) {
     val scope = rememberCoroutineScope()
@@ -47,14 +46,14 @@ fun EventScreen(navController: NavController) {
     var events by remember { mutableStateOf<List<Event>>(emptyList()) }
     var selectedDate by remember { mutableStateOf(today) }
     var selectedEvents by remember { mutableStateOf<List<Event>>(emptyList()) }
-
     var currentMonth by remember { mutableStateOf(YearMonth.now()) }
     val daysOfWeek = DayOfWeek.values()
+    val spacing = LocalSpacing.current
 
     LaunchedEffect(Unit) {
         scope.launch(Dispatchers.IO) {
             try {
-                val jsonString = URL("https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/json/events.json").readText()
+                val jsonString = URL("https://winlayassets.a3x.xyz/json/events.json").readText()
                 val root = Json.parseToJsonElement(jsonString).jsonObject
                 val parsedEvents = Json.decodeFromString<List<Event>>(root["events"].toString())
                 events = parsedEvents
@@ -65,142 +64,286 @@ fun EventScreen(navController: NavController) {
         }
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-            .verticalScroll(rememberScrollState())
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            IconButton(onClick = { navController.popBackStack() }) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Back")
-            }
-            Spacer(modifier = Modifier.width(8.dp))
-            Text("Events", style = MaterialTheme.typography.headlineSmall)
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            TextButton(onClick = { currentMonth = currentMonth.minusMonths(1) }) {
-                Text("< ${currentMonth.minusMonths(1).month.getDisplayName(TextStyle.SHORT, Locale.getDefault())}")
-            }
-            Text(
-                text = "${currentMonth.month.getDisplayName(TextStyle.FULL, Locale.getDefault())} ${currentMonth.year}",
-                style = MaterialTheme.typography.titleMedium
-            )
-            TextButton(onClick = { currentMonth = currentMonth.plusMonths(1) }) {
-                Text("${currentMonth.plusMonths(1).month.getDisplayName(TextStyle.SHORT, Locale.getDefault())} >")
-            }
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            daysOfWeek.forEach {
-                Text(
-                    text = it.getDisplayName(TextStyle.SHORT, Locale.getDefault()),
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.labelSmall,
-                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        "Events Calendar",
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                },
+                navigationIcon = {
+                    IconButton(
+                        onClick = { navController.popBackStack() },
+                        modifier = Modifier.size(40.dp)
+                    ) {
+                        Icon(
+                            Icons.Default.ArrowBack,
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    scrolledContainerColor = MaterialTheme.colorScheme.surface
                 )
-            }
+            )
         }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .padding(spacing.medium)
+                .verticalScroll(rememberScrollState())
+                .fillMaxSize()
+        ) {
+            PremiumCalendarHeader(
+                currentMonth = currentMonth,
+                onPreviousMonth = { currentMonth = currentMonth.minusMonths(1) },
+                onNextMonth = { currentMonth = currentMonth.plusMonths(1) }
+            )
 
-        val firstDayOfMonth = currentMonth.atDay(1)
-        val dayOfWeekOffset = firstDayOfMonth.dayOfWeek.ordinal
+            Spacer(modifier = Modifier.height(spacing.medium))
 
-        val daysInMonth = currentMonth.lengthOfMonth()
-        val totalGridCells = dayOfWeekOffset + daysInMonth
-        val weeks = (totalGridCells + 6) / 7
+            DaysOfWeekHeader(daysOfWeek)
 
-        Column {
-            for (week in 0 until weeks) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
+            Spacer(modifier = Modifier.height(spacing.small))
+
+            PremiumCalendarGrid(
+                currentMonth = currentMonth,
+                selectedDate = selectedDate,
+                events = events,
+                onDateSelected = { date ->
+                    selectedDate = date
+                    selectedEvents = events.filter { it.date == date.toString() }
+                }
+            )
+
+            Spacer(modifier = Modifier.height(spacing.large))
+
+            Text(
+                "Events on ${selectedDate}",
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.padding(bottom = spacing.small)
+            )
+
+            if (selectedEvents.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = spacing.xlarge),
+                    contentAlignment = Alignment.Center
                 ) {
-                    for (dayOfWeek in 0..6) {
-                        val dayIndex = week * 7 + dayOfWeek
-                        val day = dayIndex - dayOfWeekOffset + 1
-
-                        if (day in 1..daysInMonth) {
-                            val date = currentMonth.atDay(day)
-                            val isSelected = selectedDate == date
-                            val hasEvent = events.any { it.date == date.toString() }
-
-                            Box(
-                                contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .padding(4.dp)
-                                    .size(48.dp)
-                                    .background(
-                                        if (isSelected) MaterialTheme.colorScheme.primary.copy(0.2f) else Color.Transparent,
-                                        CircleShape
-                                    )
-                                    .clickable {
-                                        selectedDate = date
-                                        selectedEvents = events.filter { it.date == date.toString() }
-                                    }
-                            ) {
-                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                    Text(day.toString(), style = MaterialTheme.typography.labelMedium)
-                                    if (hasEvent) {
-                                        Box(
-                                            modifier = Modifier
-                                                .padding(top = 4.dp)
-                                                .size(6.dp)
-                                                .background(MaterialTheme.colorScheme.primary, CircleShape)
-                                        )
-                                    }
-                                }
-                            }
-                        } else {
-                            Spacer(modifier = Modifier.size(48.dp))
-                        }
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(spacing.small)
+                    ) {
+                        Icon(
+                            Icons.Default.Event,
+                            contentDescription = "No events",
+                            modifier = Modifier.size(32.dp),
+                            tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                        )
+                        Text(
+                            "No events scheduled",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
                     }
                 }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        if (selectedEvents.isEmpty()) {
-            Text("No events on $selectedDate.", style = MaterialTheme.typography.bodyMedium)
-        } else {
-            selectedEvents.forEach { event ->
-                EventCard(event)
-                Spacer(modifier = Modifier.height(12.dp))
+            } else {
+                Column(verticalArrangement = Arrangement.spacedBy(spacing.medium)) {
+                    selectedEvents.forEach { event ->
+                        PremiumEventCard(event)
+                    }
+                }
             }
         }
     }
 }
 
 @Composable
-fun EventCard(event: Event) {
-    Card(
+fun PremiumCalendarHeader(
+    currentMonth: YearMonth,
+    onPreviousMonth: () -> Unit,
+    onNextMonth: () -> Unit
+) {
+    val spacing = LocalSpacing.current
+
+    Row(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Column(modifier = Modifier.padding(12.dp)) {
+        TextButton(
+            onClick = onPreviousMonth,
+            colors = ButtonDefaults.textButtonColors(
+                contentColor = MaterialTheme.colorScheme.primary
+            )
+        ) {
+            Text("‹ ${currentMonth.minusMonths(1).month.getDisplayName(TextStyle.SHORT, Locale.getDefault())}")
+        }
+
+        Text(
+            text = "${currentMonth.month.getDisplayName(TextStyle.FULL, Locale.getDefault())} ${currentMonth.year}",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+
+        TextButton(
+            onClick = onNextMonth,
+            colors = ButtonDefaults.textButtonColors(
+                contentColor = MaterialTheme.colorScheme.primary
+            )
+        ) {
+            Text("${currentMonth.plusMonths(1).month.getDisplayName(TextStyle.SHORT, Locale.getDefault())} ›")
+        }
+    }
+}
+
+@Composable
+fun DaysOfWeekHeader(daysOfWeek: Array<DayOfWeek>) {
+    val spacing = LocalSpacing.current
+
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        daysOfWeek.forEach {
+            Text(
+                text = it.getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                modifier = Modifier.weight(1f),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+        }
+    }
+}
+
+@Composable
+fun PremiumCalendarGrid(
+    currentMonth: YearMonth,
+    selectedDate: LocalDate,
+    events: List<Event>,
+    onDateSelected: (LocalDate) -> Unit
+) {
+    val spacing = LocalSpacing.current
+    val firstDayOfMonth = currentMonth.atDay(1)
+    val dayOfWeekOffset = firstDayOfMonth.dayOfWeek.ordinal
+    val daysInMonth = currentMonth.lengthOfMonth()
+    val totalGridCells = dayOfWeekOffset + daysInMonth
+    val weeks = (totalGridCells + 6) / 7
+
+    Column {
+        for (week in 0 until weeks) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                for (dayOfWeek in 0..6) {
+                    val dayIndex = week * 7 + dayOfWeek
+                    val day = dayIndex - dayOfWeekOffset + 1
+
+                    if (day in 1..daysInMonth) {
+                        val date = currentMonth.atDay(day)
+                        val isSelected = selectedDate == date
+                        val hasEvent = events.any { it.date == date.toString() }
+
+                        Box(
+                            contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .weight(1f)
+                                .aspectRatio(1f)
+                                .padding(2.dp)
+                                .background(
+                                    if (isSelected) MaterialTheme.colorScheme.primary.copy(0.2f)
+                                    else Color.Transparent,
+                                    CircleShape
+                                )
+                                .clickable { onDateSelected(date) }
+                        ) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.spacedBy(2.dp)
+                            ) {
+                                Text(
+                                    day.toString(),
+                                    style = MaterialTheme.typography.labelMedium,
+                                    color = if (isSelected) MaterialTheme.colorScheme.primary
+                                    else MaterialTheme.colorScheme.onSurface
+                                )
+                                if (hasEvent) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(4.dp)
+                                            .background(MaterialTheme.colorScheme.primary, CircleShape)
+                                    )
+                                }
+                            }
+                        }
+                    } else {
+                        Spacer(modifier = Modifier.weight(1f))
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun PremiumEventCard(event: Event) {
+    val spacing = LocalSpacing.current
+
+    PremiumCard(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(spacing.medium)
+        ) {
             Image(
                 painter = rememberAsyncImagePainter(
-                    ImageRequest.Builder(LocalContext.current).data(event.image).crossfade(true).build()
+                    ImageRequest.Builder(LocalContext.current)
+                        .data(event.image)
+                        .crossfade(true)
+                        .build()
                 ),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(160.dp)
+                    .height(180.dp)
+                    .clip(MaterialTheme.shapes.medium)
             )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(event.title, style = MaterialTheme.typography.titleMedium)
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(event.description, style = MaterialTheme.typography.bodyMedium)
+
+            Spacer(modifier = Modifier.height(spacing.medium))
+
+            Text(
+                event.title,
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            Spacer(modifier = Modifier.height(spacing.small))
+
+            Text(
+                event.description,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
+            )
+
+            Spacer(modifier = Modifier.height(spacing.small))
+
+            Text(
+                "Date: ${event.date}",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.primary
+            )
         }
     }
 }

@@ -9,63 +9,204 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import android.util.Base64
+import com.winlay.a3x.components.PremiumCard
+import com.winlay.a3x.ui.theme.LocalSpacing
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Business
+import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Palette
 
 @Composable
 fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
     val currentTheme by viewModel.theme.collectAsState()
     var showThemeDialog by remember { mutableStateOf(false) }
     var showAboutDialog by remember { mutableStateOf(false) }
-    var showWhatsNewDialog by remember { mutableStateOf(false) } // NEW
+    var showWhatsNewDialog by remember { mutableStateOf(false) }
     val uriHandler = LocalUriHandler.current
     var versionTapCount by remember { mutableStateOf(0) }
+    val spacing = LocalSpacing.current
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+            .padding(spacing.medium),
+        verticalArrangement = Arrangement.spacedBy(spacing.medium)
     ) {
-        Text("Settings", style = MaterialTheme.typography.headlineMedium)
-
-        ListItem(
-            headlineContent = { Text("Theme") },
-            supportingContent = { Text(currentTheme.displayName) },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { showThemeDialog = true }
+        Text(
+            "Settings",
+            style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.onSurface
         )
 
-        ListItem(
-            headlineContent = { Text("What's new") },
-            supportingContent = { Text("Latest changes in this version") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { showWhatsNewDialog = true }
-        )
+        PremiumCard(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(spacing.medium)
+            ) {
+                Text(
+                    "Appearance",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(bottom = spacing.small)
+                )
 
-        ListItem(
-            headlineContent = { Text("About") },
-            supportingContent = { Text("App info and credits") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { showAboutDialog = true }
-        )
+                ListItem(
+                    headlineContent = {
+                        Text(
+                            "Theme",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    },
+                    supportingContent = {
+                        Text(
+                            currentTheme.displayName,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { showThemeDialog = true },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Default.Palette,
+                            contentDescription = "Theme",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                )
+            }
+        }
 
-        ListItem(
-            headlineContent = { Text("Donate") },
-            supportingContent = { Text("Support Winlay development") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable {
-                    uriHandler.openUri("https://a3x.xyz/donate")
-                }
-        )
+        PremiumCard(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(spacing.medium)
+            ) {
+                Text(
+                    "About & Information",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(bottom = spacing.small)
+                )
+
+                ListItem(
+                    headlineContent = {
+                        Text(
+                            "What's New",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    },
+                    supportingContent = {
+                        Text(
+                            "Latest changes and updates",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { showWhatsNewDialog = true },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "What's New",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                )
+
+                ListItem(
+                    headlineContent = {
+                        Text(
+                            "About Winlay",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    },
+                    supportingContent = {
+                        Text(
+                            "App info and credits",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { showAboutDialog = true },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Default.Business,
+                            contentDescription = "About",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                )
+            }
+        }
+
+        PremiumCard(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(spacing.medium)
+            ) {
+                Text(
+                    "Support & Contribution",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(bottom = spacing.small)
+                )
+
+                ListItem(
+                    headlineContent = {
+                        Text(
+                            "Donate",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    },
+                    supportingContent = {
+                        Text(
+                            "Support A3X development",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            uriHandler.openUri("https://a3x.xyz/donate")
+                        },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Default.Favorite,
+                            contentDescription = "Donate",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                )
+            }
+        }
     }
 
     if (showThemeDialog) {
         AlertDialog(
             onDismissRequest = { showThemeDialog = false },
-            title = { Text("Choose Theme") },
+            title = {
+                Text(
+                    "Choose Theme",
+                    style = MaterialTheme.typography.titleLarge
+                )
+            },
             text = {
                 Column {
                     ThemeOption.values().forEach { option ->
@@ -76,7 +217,7 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
                                     viewModel.setTheme(option)
                                     showThemeDialog = false
                                 }
-                                .padding(vertical = 8.dp),
+                                .padding(vertical = spacing.small),
                             horizontalArrangement = Arrangement.Start
                         ) {
                             RadioButton(
@@ -84,19 +225,33 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
                                 onClick = {
                                     viewModel.setTheme(option)
                                     showThemeDialog = false
-                                }
+                                },
+                                colors = RadioButtonDefaults.colors(
+                                    selectedColor = MaterialTheme.colorScheme.primary
+                                )
                             )
-                            Spacer(Modifier.width(8.dp))
-                            Text(option.displayName)
+                            Spacer(Modifier.width(spacing.small))
+                            Text(
+                                option.displayName,
+                                style = MaterialTheme.typography.bodyLarge
+                            )
                         }
                     }
                 }
             },
             confirmButton = {
-                TextButton(onClick = { showThemeDialog = false }) {
+                TextButton(
+                    onClick = { showThemeDialog = false },
+                    colors = ButtonDefaults.textButtonColors(
+                        contentColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
                     Text("Cancel")
                 }
-            }
+            },
+            containerColor = MaterialTheme.colorScheme.surface,
+            titleContentColor = MaterialTheme.colorScheme.onSurface,
+            textContentColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
         )
     }
 
@@ -115,7 +270,7 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
 
                     Text("Version:", style = MaterialTheme.typography.labelMedium)
                     Text(
-                        "1.7",
+                        "v2.0",
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.clickable {
                             versionTapCount++
@@ -180,16 +335,6 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-
-                    Text("License:", style = MaterialTheme.typography.labelMedium)
-                    Text(
-                        text = "GNU General Public License v3.0",
-                        color = MaterialTheme.colorScheme.primary,
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.clickable {
-                            uriHandler.openUri("https://www.gnu.org/licenses/gpl-3.0.html")
-                        }
-                    )
                 }
             },
             confirmButton = {
@@ -206,11 +351,14 @@ fun SettingsScreen(viewModel: ThemeViewModel = viewModel()) {
     if (showWhatsNewDialog) {
         AlertDialog(
             onDismissRequest = { showWhatsNewDialog = false },
-            title = { Text("What's new in 1.7") },
+            title = { Text("What's new in v2.0") },
             text = {
                 Column {
-                    Text("• Changed icon", style = MaterialTheme.typography.bodyMedium)
-                    Text("• Fixed bugs", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Redesigned UI", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Updated icons", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Version numbers now start with 'v'", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Bug fixes", style = MaterialTheme.typography.bodyMedium)
+                    Text("• Changed JSON and image URLs to avoid rate limits.", style = MaterialTheme.typography.bodyMedium)
                 }
             },
             confirmButton = {

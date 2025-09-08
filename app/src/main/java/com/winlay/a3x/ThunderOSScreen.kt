@@ -43,7 +43,7 @@ fun ThunderOSScreen(navController: NavController) {
     LaunchedEffect(Unit) {
         try {
             val jsonText = client
-                .get("https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/json/thunderos.json")
+                .get("https://winlayassets.a3x.xyz/json/thunderos.json")
                 .bodyAsText()
 
             val parsed = Json { ignoreUnknownKeys = true }

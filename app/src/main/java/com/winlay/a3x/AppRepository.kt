@@ -20,7 +20,7 @@ object AppRepository {
     suspend fun loadAppsFromGitHub(): List<App> = withContext(Dispatchers.IO) {
         val client = OkHttpClient()
         val request = Request.Builder()
-            .url("https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/json/apps.json")
+            .url("https://winlayassets.a3x.xyz/json/apps.json")
             .build()
 
         val response = client.newCall(request).execute()

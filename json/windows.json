@@ -1,5 +1,16 @@
 [
   {
+    "name": "Windows 11 Pro (Tiny 11 Core Beta)",
+    "description": "No description",
+    "iconUrl": "https://winlayassets.a3x.xyz/images/20250911_195104.jpg",
+    "downloads": [
+      {
+        "label": "Download (Mediafire)",
+        "url": "https://www.mediafire.com/file/5v6v53ug3afnzc4/tiny11.rar/file"
+      }
+    ]
+  },
+  {
     "name": "Windows 10 Enterprise LTSC 1809 LiteOS",
     "description": "No description",
     "iconUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/20250601_213610.jpg",

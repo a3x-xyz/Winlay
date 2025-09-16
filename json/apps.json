@@ -3,9 +3,9 @@
     "id": "limbo-pc-emulator-x86",
     "name": "Limbo PC Emulator x86",
     "description": "Limbo is a QEMU-based emulator for Android supports emulation for these architectures: x86/x86_64 ARM/ARM64 PowerPC/PowerPC64 Sparc.",
-    "logoUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/limbo-pc-emulator.png",
+    "logoUrl": "https://winlayassets.a3x.xyz/images/limbo-pc-emulator.png",
     "screenshots": [
-      "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/640.png"
+      "https://winlayassets.a3x.xyz/images/640.png"
     ],
     "downloadUrl": "https://github.com/limboemu/limbo/releases/download/v6.0.1-LimboEmulator/limbo-android-x86-6.0.1-qemu-5.1.0.apk"
   },
@@ -13,7 +13,7 @@
    "id": "termux",
    "name": "Termux",
    "description": "Termux combines powerful terminal emulation with an extensive Linux package collection.\n\n* Enjoy the bash and zsh shells.\n* Edit files with nano and vim.\n* Access servers over ssh.\n* Compile code with gcc and clang.\n* Use the python console as a pocket calculator.\n* Check out projects with git and subversion.\n* Run text-based games with frotz.\n\nAt first start a small base system is downloaded - desired packages can then be installed using the apt package manager known from the Debian and Ubuntu Linux distributions. Access the built-in help by long-pressing anywhere on the terminal and selecting the Help menu option to learn more.\n\nRead help online: https://wiki.termux.com/\n\nReddit Community: https://termux.com/community",
-   "logoUrl": "https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/termux.png",
+   "logoUrl": "https://winlayassets.a3x.xyz/images/termux.png",
    "screenshots": [
      "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/1.jpg",
      "https://f-droid.org/repo/com.termux/en-US/phoneScreenshots/2.jpg",
@@ -31,5 +31,15 @@
      "https://www.openapk.net/images/screenshots/vectras-vm-apk.jpeg"
    ],
    "downloadUrl": "https://github.com/xoureldeen/Vectras-VM-Android/releases/download/v2.9.5/app-release-universal.apk"
+ },
+ {
+   "id": "winlator",
+   "name": "Winlator",
+   "description": "Winlator is an Android application that lets you to run Windows (x86_64) applications with Wine and Box86/Box64.",
+   "logoUrl": "https://winlayassets.a3x.xyz/images/winlator.png",
+   "screenshots": [
+     "https://www.openapk.net/images/screenshots/winlator-1.jpg"
+   ],
+   "downloadUrl": "https://github.com/brunodev85/winlator/releases/download/v10.1.0/Winlator_10.1.apk"
  }
 ]

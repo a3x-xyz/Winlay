@@ -41,5 +41,16 @@
      "https://www.openapk.net/images/screenshots/winlator-1.jpg"
    ],
    "downloadUrl": "https://github.com/brunodev85/winlator/releases/download/v10.1.0/Winlator_10.1.apk"
+ },
+ {
+   "id": "limbo-zeli-mod",
+   "name": "Limbo Zeli Mod",
+   "description": "Limbo PC x86 Emulator Modified by Zeli.",
+   "logoUrl": "https://winlayassets.a3x.xyz/images/windows_11_my_computer.png",
+   "screenshots": [
+     "https://dn721709.ca.archive.org/0/items/base_20250404/Screenshot_20250404-090207.png",
+     "https://ia600709.us.archive.org/7/items/base_20250404/Screenshot_20250404-090257.png"
+   ],
+   "downloadUrl": "https://drive.google.com/file/d/1nmMbsyYrNm_i_Jpr6klV9aGAOpMWmYD2/view?usp=drivesdk"
  }
 ]

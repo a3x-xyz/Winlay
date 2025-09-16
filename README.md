@@ -41,7 +41,7 @@ The source code is available in the [`/sourcecode`](https://github.com/a3x-xyz/W
 ### Screenshot
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/a3x-xyz/Winlay/refs/heads/main/uploads/screenshot.png" alt="screenshot">
+  <img src="https://winlayassets.a3x.xyz/images/New_Project_1.png" alt="screenshot">
 </p>
 
 ### Donate
